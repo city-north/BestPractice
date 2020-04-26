@@ -3,6 +3,7 @@ package vip.ericchen.bp.redis.limiter.impl;
 import vip.ericchen.bp.redis.limiter.IRateLimiter;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * <p>

@@ -17,7 +17,6 @@ import vip.ericchen.bp.redis.limiter.IRateLimiter;
  *
  * @author ericchen.vip@foxmail.com 2020/04/18 21:59
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
 public class SimpleRateLimiterTest {

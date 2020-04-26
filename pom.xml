@@ -3,7 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <artifactId>spring-boot-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.2.6.RELEASE</version>
+    </parent>
     <groupId>vip.ericchen.bp</groupId>
     <artifactId>best-practice</artifactId>
     <packaging>pom</packaging>
@@ -14,6 +18,8 @@
     </modules>
     <properties>
         <best-practice.version>1.0-SNAPSHOT</best-practice.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencyManagement>
@@ -26,8 +32,21 @@
             <dependency>
                 <groupId>vip.ericchen.bp</groupId>
                 <artifactId>redis</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${best-practice.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <skipTests>true</skipTests>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
